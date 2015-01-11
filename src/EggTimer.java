@@ -1,10 +1,11 @@
-package munakello_public;
+package eggtimer;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Timer;
 
 /**
- * A simple egg timer that plays a random mp3 file from a directory at set intervals.
+ * A simple egg timer that plays a random mp3 file from a directory at set intervals. Requires the JavaZOOM JLayer library.
  * 
  * 1st argument - Wanted playback period as minutes.
  * 2nd argument - Wanted playback directory (relative path, defaults to the current folder).
@@ -31,6 +32,12 @@ public class EggTimer {
 			finalDir = "." + sep + playDirStr;
 		}
 		File dir = new File(finalDir);
+		try {
+			System.out.println(dir.getCanonicalPath());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.playTask = new RandomPlayerTask(dir);
 	}
 

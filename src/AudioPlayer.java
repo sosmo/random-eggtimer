@@ -1,4 +1,4 @@
-package munakello_public;
+package eggtimer;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -31,7 +31,7 @@ public class AudioPlayer implements AudioPlayerInterface {
 
 
 	public static File[] listFilesWithType(File dir, String type) throws BadDirectoryException {
-		if (dir.isDirectory()) {
+		if (!dir.isDirectory()) {
 			throw new BadDirectoryException("Give an address to a directory");
 		}
 		File[] files;
@@ -39,7 +39,7 @@ public class AudioPlayer implements AudioPlayerInterface {
 			files = dir.listFiles(new FilenameFilter() {
 				@Override
 				public boolean accept(File file, String name) {
-					return file.isDirectory();
+					return !file.isDirectory();
 				}
 			});
 		}

@@ -1,4 +1,4 @@
-package munakello_public;
+package eggtimer;
 
 public class AudioPlaybackFailureException extends Exception {
 

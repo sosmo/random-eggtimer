@@ -1,4 +1,4 @@
-package munakello_public;
+package eggtimer;
 
 public class Mp3Player extends AudioPlayer {
 	

@@ -1,4 +1,4 @@
-package munakello_public;
+package eggtimer;
 
 import java.io.File;
 import java.util.TimerTask;
