@@ -32,7 +32,7 @@ public class AudioPlayer implements AudioPlayerInterface {
 
 	public static File[] listFilesWithType(File dir, String type) throws BadDirectoryException {
 		if (!dir.isDirectory()) {
-			throw new BadDirectoryException("Give an address to a directory");
+			throw new BadDirectoryException("Not a directory (" + dir.getAbsolutePath() + ")");
 		}
 		File[] files;
 		if (type == null || type.equals("")) {
